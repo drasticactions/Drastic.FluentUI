@@ -16,5 +16,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Drastic.FluentUI.Mac" Version="1.0.0" />
+    <PackageReference Include="Drastic.Masonry" Version="1.0.2" />
   </ItemGroup>
 </Project>

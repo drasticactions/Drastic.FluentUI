@@ -22,9 +22,9 @@ BINDING_OUTPUT_MAC=$(ROOT)/../bindings-mac
 IOS_SDK=iphoneos16.2
 MAC_SDK=macosx13.1
 
-all: iossimulator iosdevice maccatalyst mac xcframework_ios xcframework_mac dotnet
+all: iossimulator iosdevice maccatalyst mac xcframework dotnet
 
-build: iossimulator iosdevice maccatalyst mac xcframework_ios xcframework_mac
+build: iossimulator iosdevice maccatalyst mac xcframework
 
 xcframework: xcframework_ios xcframework_mac
 
