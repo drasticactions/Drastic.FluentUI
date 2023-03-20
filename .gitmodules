@@ -1,0 +1,3 @@
+[submodule "external/fluentui-apple"]
+	path = external/fluentui-apple
+	url = git@github.com:drasticactions/fluentui-apple.git

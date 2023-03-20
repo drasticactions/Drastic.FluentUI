@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drastic.FluentUI.Sample", "Drastic.FluentUI.Sample\Drastic.FluentUI.Sample.csproj", "{8794F2AC-0A87-4D25-85FF-5C97757AF4E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drastic.FluentUI.Sample.Mac", "Drastic.FluentUI.Sample.Mac\Drastic.FluentUI.Sample.Mac.csproj", "{BC9A04E7-3AE2-4C63-B089-69287BAB2856}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drastic.FluentUI.Sample.iOS", "Drastic.FluentUI.Sample.iOS\Drastic.FluentUI.Sample.iOS.csproj", "{CED9F769-7DFB-4475-A98B-546F946EB03D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drastic.FluentUI.Sample.Catalyst", "Drastic.FluentUI.Sample.Catalyst\Drastic.FluentUI.Sample.Catalyst.csproj", "{A81A115A-002D-4C38-8B2A-4416A0378E86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8794F2AC-0A87-4D25-85FF-5C97757AF4E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8794F2AC-0A87-4D25-85FF-5C97757AF4E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8794F2AC-0A87-4D25-85FF-5C97757AF4E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8794F2AC-0A87-4D25-85FF-5C97757AF4E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC9A04E7-3AE2-4C63-B089-69287BAB2856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC9A04E7-3AE2-4C63-B089-69287BAB2856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC9A04E7-3AE2-4C63-B089-69287BAB2856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC9A04E7-3AE2-4C63-B089-69287BAB2856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED9F769-7DFB-4475-A98B-546F946EB03D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED9F769-7DFB-4475-A98B-546F946EB03D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED9F769-7DFB-4475-A98B-546F946EB03D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED9F769-7DFB-4475-A98B-546F946EB03D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A81A115A-002D-4C38-8B2A-4416A0378E86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A81A115A-002D-4C38-8B2A-4416A0378E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A81A115A-002D-4C38-8B2A-4416A0378E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A81A115A-002D-4C38-8B2A-4416A0378E86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
