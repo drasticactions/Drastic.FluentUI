@@ -6,7 +6,7 @@ using ObjCRuntime;
 using UIKit;
 using NSLineBreakMode = global::UIKit.UILineBreakMode;
 using NSTextAlignment = global::UIKit.UITextAlignment;
-namespace Drastic.FluentUI
+namespace FluentUI
 {
 
 // @protocol AccessibleViewDelegate
@@ -5469,37 +5469,37 @@ namespace Drastic.FluentUI
 		// [DesignatedInitializer]
 		// NativeHandle Constructor (NSCoder aDecoder);
 
-		// -(void)setupWithStyle:(enum MSFTableViewHeaderFooterViewStyle)style title:(NSString * _Nonnull)title accessoryButtonTitle:(NSString * _Nonnull)accessoryButtonTitle;
-		[Export ("setupWithStyle:title:accessoryButtonTitle:")]
-		void SetupWithStyle (MSFTableViewHeaderFooterViewStyle style, string title, string accessoryButtonTitle);
+		// // -(void)setupWithStyle:(enum MSFTableViewHeaderFooterViewStyle)style title:(NSString * _Nonnull)title accessoryButtonTitle:(NSString * _Nonnull)accessoryButtonTitle;
+		// [Export ("setupWithStyle:title:accessoryButtonTitle:")]
+		// void SetupWithStyle (MSFTableViewHeaderFooterViewStyle style, string title, string accessoryButtonTitle);
 
 		// -(void)setupWithStyle:(enum MSFTableViewHeaderFooterViewStyle)style title:(NSString * _Nonnull)title accessoryButtonTitle:(NSString * _Nonnull)accessoryButtonTitle leadingView:(UIView * _Nullable)leadingView;
 		[Export ("setupWithStyle:title:accessoryButtonTitle:leadingView:")]
-		void SetupWithStyle1 (MSFTableViewHeaderFooterViewStyle style, string title, string accessoryButtonTitle, [NullAllowed] UIView leadingView);
+		void SetupWithStyle (MSFTableViewHeaderFooterViewStyle style, string title, string accessoryButtonTitle, [NullAllowed] UIView leadingView);
 
-		// -(void)setupWithStyle:(enum MSFTableViewHeaderFooterViewStyle)style attributedTitle:(NSAttributedString * _Nonnull)attributedTitle accessoryButtonTitle:(NSString * _Nonnull)accessoryButtonTitle;
-		[Export ("setupWithStyle:attributedTitle:accessoryButtonTitle:")]
-		void SetupWithStyle2 (MSFTableViewHeaderFooterViewStyle style, NSAttributedString attributedTitle, string accessoryButtonTitle);
+		// // -(void)setupWithStyle:(enum MSFTableViewHeaderFooterViewStyle)style attributedTitle:(NSAttributedString * _Nonnull)attributedTitle accessoryButtonTitle:(NSString * _Nonnull)accessoryButtonTitle;
+		// [Export ("setupWithStyle:attributedTitle:accessoryButtonTitle:")]
+		// void SetupWithStyle2 (MSFTableViewHeaderFooterViewStyle style, NSAttributedString attributedTitle, string accessoryButtonTitle);
 
 		// -(void)setupWithStyle:(enum MSFTableViewHeaderFooterViewStyle)style attributedTitle:(NSAttributedString * _Nonnull)attributedTitle accessoryButtonTitle:(NSString * _Nonnull)accessoryButtonTitle leadingView:(UIView * _Nullable)leadingView;
 		[Export ("setupWithStyle:attributedTitle:accessoryButtonTitle:leadingView:")]
-		void SetupWithStyle3 (MSFTableViewHeaderFooterViewStyle style, NSAttributedString attributedTitle, string accessoryButtonTitle, [NullAllowed] UIView leadingView);
+		void SetupWithStyle (MSFTableViewHeaderFooterViewStyle style, NSAttributedString attributedTitle, string accessoryButtonTitle, [NullAllowed] UIView leadingView);
 
-		// -(void)setupWithStyle:(enum MSFTableViewHeaderFooterViewStyle)style title:(NSString * _Nonnull)title accessoryView:(UIView * _Nonnull)accessoryView;
-		[Export ("setupWithStyle:title:accessoryView:")]
-		void SetupWithStyle4 (MSFTableViewHeaderFooterViewStyle style, string title, UIView accessoryView);
+		// // -(void)setupWithStyle:(enum MSFTableViewHeaderFooterViewStyle)style title:(NSString * _Nonnull)title accessoryView:(UIView * _Nonnull)accessoryView;
+		// [Export ("setupWithStyle:title:accessoryView:")]
+		// void SetupWithStyle (MSFTableViewHeaderFooterViewStyle style, string title, UIView accessoryView);
 
 		// -(void)setupWithStyle:(enum MSFTableViewHeaderFooterViewStyle)style title:(NSString * _Nonnull)title accessoryView:(UIView * _Nonnull)accessoryView leadingView:(UIView * _Nullable)leadingView;
 		[Export ("setupWithStyle:title:accessoryView:leadingView:")]
-		void SetupWithStyle5 (MSFTableViewHeaderFooterViewStyle style, string title, UIView accessoryView, [NullAllowed] UIView leadingView);
+		void SetupWithStyle (MSFTableViewHeaderFooterViewStyle style, string title, UIView accessoryView, [NullAllowed] UIView leadingView);
 
 		// -(void)setupWithStyle:(enum MSFTableViewHeaderFooterViewStyle)style accessoryButtonTitle:(NSString * _Nonnull)accessoryButtonTitle;
 		[Export ("setupWithStyle:accessoryButtonTitle:")]
-		void SetupWithStyle6 (MSFTableViewHeaderFooterViewStyle style, string accessoryButtonTitle);
+		void SetupWithStyleWithAccessoryButtonTitle (MSFTableViewHeaderFooterViewStyle style, string accessoryButtonTitle);
 
 		// -(void)setupWithStyle:(enum MSFTableViewHeaderFooterViewStyle)style title:(NSString * _Nonnull)title;
 		[Export ("setupWithStyle:title:")]
-		void SetupWithStyle7 (MSFTableViewHeaderFooterViewStyle style, string title);
+		void SetupWithStyleWithTitle (MSFTableViewHeaderFooterViewStyle style, string title);
 
 		// -(void)layoutSubviews;
 		[Export ("layoutSubviews")]

@@ -4,13 +4,13 @@ PROJECT_ROOT=$(ROOT)/../external/fluentui-apple
 PROJECT_IOS=$(PROJECT_ROOT)/ios/FluentUI.xcodeproj
 PROJECT_APPLE=$(PROJECT_ROOT)/macos/xcode/FluentUI.xcodeproj
 BUILD_ROOT=$(PROJECT_ROOT)/build
-TARGET_IOS="DrasticFluentUIFramework"
+TARGET_IOS="FluentUI"
 TARGET_MAC="FluentUI-macOS"
 TARGET_RESOURCES_IOS="FluentUIResources-ios"
 TARGET_RESOURCES_MACOS="FluentUIResources-macos"
 PROJECTNAME=FluentUI
 OUTPUT=$(ROOT)/Build
-IOS_FRAMEWORK_PATH=Products/Library/Frameworks/DrasticFluentUIFramework.framework
+IOS_FRAMEWORK_PATH=Products/Library/Frameworks/FluentUI.framework
 FRAMEWORK_PATH=Products/@rpath/FluentUI.framework
 BUNDLES_PATH=Products/Library/Bundles
 FRAMEWORKS=$(ROOT)/Frameworks
@@ -26,6 +26,10 @@ all: iossimulator iosdevice maccatalyst mac xcframework dotnet
 
 build: iossimulator iosdevice maccatalyst mac xcframework
 
+build_ios: iossimulator iosdevice maccatalyst xcframework_ios
+
+build_mac: mac xcframework_mac
+
 xcframework: xcframework_ios xcframework_mac
 
 pack: build nuget
@@ -38,9 +42,6 @@ iosdevice:
 
 maccatalyst:
 	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -project $(PROJECT_IOS) -scheme $(TARGET_IOS) -destination "generic/platform=macOS,variant=Mac Catalyst,name=Any Mac" -archivePath $(BUILD_ROOT)/catalyst.xcarchive SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
-
-ios_bundle:
-	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -project $(PROJECT_IOS) -scheme $(TARGET_RESOURCES_IOS) -destination "generic/platform=iOS Simulator" -archivePath $(BUILD_ROOT)/ios_bundle.xcarchive -sdk iphonesimulator SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
 mac:
 	$(XBUILD) archive ONLY_ACTIVE_ARCH=NO -project $(PROJECT_APPLE) -scheme $(TARGET_MAC) -destination "generic/platform=macOS,name=Any Mac" -archivePath $(BUILD_ROOT)/mac.xcarchive SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES

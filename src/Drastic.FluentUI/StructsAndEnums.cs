@@ -4,7 +4,7 @@ using CoreGraphics;
 using Foundation;
 using ObjCRuntime;
 
-namespace Drastic.FluentUI
+namespace FluentUI
 {
 [Native]
 	public enum MSFActionsCellActionType : long

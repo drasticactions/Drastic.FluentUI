@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+    <TargetFrameworks>net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>
     <Nullable>enable</Nullable>
     <ImplicitUsings>true</ImplicitUsings>
     <IsBindingProject>true</IsBindingProject>
     <IsPackable>true</IsPackable>
-    <Description>Binding of FluentUI for .NET iOS and Catalyst Projects</Description>
+    <Description>Binding of FluentUI for .NET iOS, Catalyst, and macOS Projects</Description>
     <Company>Drastic Actions</Company>
 		<Authors>$(Company)</Authors>
 		<Copyright>Copyright (C) Drastic Actions</Copyright>
@@ -21,26 +21,34 @@
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<DebugType>embedded</DebugType>
-		<Version>1.0.2</Version>
+		<Version>1.0.4</Version>
 		<CompressBindingResourcePackage>true</CompressBindingResourcePackage>
 		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-maccatalyst' or '$(TargetFramework)' == 'net7.0-ios'">
     <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
     <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+
+	<NativeReference Include="..\Frameworks\FluentUI.xcframework">
+			<Kind>Framework</Kind>
+			<SmartLink>False</SmartLink>
+		</NativeReference>
   </ItemGroup>
-<!--  <ItemGroup>
-    <BundleResource Include="Resources\FluentUIResources-ios.bundle" />
-  </ItemGroup>-->
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-macos'">
+    <ObjcBindingApiDefinition Include="ApiDefinitions_mac.cs" />
+    <ObjcBindingCoreSource Include="StructsAndEnums_mac.cs" />
+
+	<NativeReference Include="..\Frameworks\FluentUI-Mac.xcframework">
+			<Kind>Framework</Kind>
+			<SmartLink>False</SmartLink>
+		</NativeReference>
+  </ItemGroup>
+
   <ItemGroup>
 		<None Include="..\..\README.md" Pack="true" PackagePath="" Visible="false" />
 		<None Include="$(MSBuildThisFileDirectory)favicon.png" Pack="true" PackagePath="" Visible="false" />
 	</ItemGroup>
-  <ItemGroup>
-		<NativeReference Include="..\Frameworks\FluentUI.xcframework">
-			<Kind>Framework</Kind>
-			<SmartLink>False</SmartLink>
-		</NativeReference>
-	</ItemGroup>
+
 </Project>
