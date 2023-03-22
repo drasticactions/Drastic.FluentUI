@@ -1,12 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>true</ImplicitUsings>
-    <IsBindingProject>true</IsBindingProject>
-    <IsPackable>true</IsPackable>
-    <Description>Binding of FluentUI for .NET iOS, Catalyst, and macOS Projects</Description>
-    <Company>Drastic Actions</Company>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('osx'))">$(TargetFrameworks);net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>true</ImplicitUsings>
+		<IsBindingProject>true</IsBindingProject>
+		<IsPackable>true</IsPackable>
+		<Description>Binding of FluentUI for .NET iOS, Catalyst, Android, macOS Projects</Description>
+		<Company>Drastic Actions</Company>
 		<Authors>$(Company)</Authors>
 		<Copyright>Copyright (C) Drastic Actions</Copyright>
 		<IsBindingProject>true</IsBindingProject>
@@ -24,29 +25,40 @@
 		<Version>1.0.4</Version>
 		<CompressBindingResourcePackage>true</CompressBindingResourcePackage>
 		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-  </PropertyGroup>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-maccatalyst' or '$(TargetFramework)' == 'net7.0-ios'">
-    <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
-    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+		<Compile Include="Bindings.cs" />
+		<Compile Include="Globals.cs" />
+	</ItemGroup>
 
-	<NativeReference Include="..\Frameworks\FluentUI.xcframework">
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-maccatalyst' or '$(TargetFramework)' == 'net7.0-ios'">
+		<ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
+		<ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+
+		<NativeReference Include="..\Frameworks\FluentUI.xcframework">
 			<Kind>Framework</Kind>
 			<SmartLink>False</SmartLink>
 		</NativeReference>
-  </ItemGroup>
+	</ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-macos'">
-    <ObjcBindingApiDefinition Include="ApiDefinitions_mac.cs" />
-    <ObjcBindingCoreSource Include="StructsAndEnums_mac.cs" />
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-macos'">
+		<ObjcBindingApiDefinition Include="ApiDefinitions_mac.cs" />
+		<ObjcBindingCoreSource Include="StructsAndEnums_mac.cs" />
 
-	<NativeReference Include="..\Frameworks\FluentUI-Mac.xcframework">
+		<NativeReference Include="..\Frameworks\FluentUI-Mac.xcframework">
 			<Kind>Framework</Kind>
 			<SmartLink>False</SmartLink>
 		</NativeReference>
-  </ItemGroup>
+	</ItemGroup>
 
-  <ItemGroup>
+	<ItemGroup>
+		<AndroidLibrary  Include="threetenabp-1.1.0.aar" Bind="false" />
+		<AndroidLibrary  Include="tokenautocomplete-2.0.8.aar" Bind="false" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<None Include="..\..\README.md" Pack="true" PackagePath="" Visible="false" />
 		<None Include="$(MSBuildThisFileDirectory)favicon.png" Pack="true" PackagePath="" Visible="false" />
 	</ItemGroup>

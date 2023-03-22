@@ -14,6 +14,12 @@ public static class MauiProgram
         {
             return new Drastic.FluentUI.MSFButton();
         };
+#elif ANDROID
+        ButtonHandler.PlatformViewFactory = (test2) =>
+        {
+			var test = new global::FluentUI.Token.ControlToken.ButtonTokens();
+			return test2.PlatformView;
+        };
 #endif
 
         builder

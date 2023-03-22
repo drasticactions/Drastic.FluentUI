@@ -1,0 +1,36 @@
+﻿<metadata>
+	<attr path="/api/package[@name='com.microsoft.fluentui.theme.token.controlTokens']"
+        name="managedName">FluentUI.Token.ControlToken</attr>
+	<attr path="/api/package[@name='com.microsoft.fluentui.theme.token']"
+        name="managedName">FluentUI.Token</attr>
+        <attr path="/api/package[@name='com.microsoft.fluentui.tokenized.persona']"
+        name="managedName">FluentUI.Token</attr>
+	<attr path="/api/package[@name='com.microsoft.fluentui.util']"
+        name="managedName">FluentUI.Util</attr>
+	<attr path="/api/package[@name='com.microsoft.fluentui.contextualcommandbar']"
+        name="managedName">FluentUI.Controls</attr>
+        <attr path="/api/package[@name='com.microsoft.fluentui.persistentbottomsheet']"
+        name="managedName">FluentUI.Controls</attr>
+         <attr path="/api/package[@name='com.microsoft.fluentui.listitem']"
+        name="managedName">FluentUI.Controls</attr>
+         <attr path="/api/package[@name='com.microsoft.fluentui.popupmenu']"
+        name="managedName">FluentUI.Controls</attr>
+          <attr path="/api/package[@name='com.microsoft.fluentui.calendar']"
+        name="managedName">FluentUI.Controls</attr>
+        <remove-node path="/api/package[@name='com.microsoft.fluentui.calendar']/class[@name='CalendarView']" />
+        <remove-node path="/api/package[@name='com.microsoft.fluentui.calendar']/interface[@name='OnDateSelectedListener']" />
+        <remove-node path="/api/package[@name='com.microsoft.fluentui.peoplepicker']/class[@name='PeoplePickerView']" />
+        <remove-node path="/api/package[@name='com.microsoft.fluentui.contextualcommandbar']/class[@name='CommandItem.DefaultImpls']/method[@name='getLabel' and count(parameter)=1 and parameter[1][@type='com.microsoft.fluentui.contextualcommandbar.CommandItem']]" />
+        <remove-node path="/api/package[@name='com.microsoft.fluentui.listitem']/class[@name='ListSubHeaderView']/method[@name='getBackground' and count(parameter)=0]" />
+        <remove-node  path="/api/package[@name='com.microsoft.fluentui.listitem']/class[@name='ListSubHeaderView']/method[@name='setBackground' and count(parameter)=1 and parameter[1][@type='int']]" />
+        <remove-node path="/api/package[@name='com.microsoft.fluentui.listitem']/class[@name='ListItemView']/method[@name='getBackground' and count(parameter)=0]" />
+        <remove-node  path="/api/package[@name='com.microsoft.fluentui.listitem']/class[@name='ListItemView']/method[@name='setBackground' and count(parameter)=1 and parameter[1][@type='int']]" />
+
+  <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+</metadata>
